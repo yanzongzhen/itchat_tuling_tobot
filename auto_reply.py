@@ -5,6 +5,12 @@ import api
 conf = api.TulingConf('2b902a5a9cb741abafd33928bfc0c536','3a20af4af4318431')
 TBS = api.TulingService(conf)
 
+@itchat.msg_register(itchat.content.PICTURE)
+def pic_reply(msg):
+    content = msg['Content']
+    print(content)
+
+
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
     myself = itchat.get_friends(update=True)[0]['NickName']
@@ -51,4 +57,5 @@ def group_text_reply(msg):
 
 if __name__ == "__main__":
     itchat.auto_login(hotReload=True)
+    # itchat.login()
     itchat.run()
