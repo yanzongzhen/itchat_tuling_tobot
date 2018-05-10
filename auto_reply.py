@@ -39,7 +39,7 @@ def get_self_info():
 def group_text_reply(msg):
     nickname,username = get_self_info()
     group_name = msg['User']['NickName']
-    group = ['一支穿云箭 千军万马来相见', '全国远景x3交流群']
+    group = ['一支穿云箭 千军万马来相见']
     group_info = itchat.search_chatrooms(name=group_name)
     item = group_info[0]['UserName']
     if group_name in group:
